@@ -138,6 +138,7 @@ for line in graph_and_EOF:
         names_adj_lists[inv_map_router_to_key[values[1]]].append(values[0])
         router_matrix[inv_map_router_to_key[values[0]], inv_map_router_to_key[values[1]]] = values[2]
         router_matrix[inv_map_router_to_key[values[1]], inv_map_router_to_key[values[0]]] = values[2]
+file.close()	
 for i in range(0, num_routers):
     router_matrix[i, i] = 0.0
     queues_for_threads.append(Queue())
@@ -175,4 +176,4 @@ for i in range(num_routers):
 #join the threads after they finish
 for thread in threads:
     thread.join()
-file.close()
+
