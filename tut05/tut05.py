@@ -125,8 +125,7 @@ locks_for_threads = [] #locks for threads
 for routerName in enumerate(routers_list):
     inv_map_router_to_key[routerName[1]] = routerName[0]
 map_router_to_key = {val: key for key, val in inv_map_router_to_key.items()}
-start+=1
-initial_cost+=4
+
 #construct the adjacency lists as well as router matrix
 for line in graph_and_EOF:
     if line.strip() == 'EOF':
