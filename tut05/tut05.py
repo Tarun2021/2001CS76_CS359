@@ -14,14 +14,15 @@ def increment():
     for i in range(5):
         i+=1
 
-initial_cost=0     
-start=-1
-end=3
+
 
    
 
 #router function which does the tasks of waiting(threads), sending the router_table, update the table, and printing the data related to routers
 def router(num_routers, router_id, router_table, shared_queue,locks_for_threads, barrier):
+    initial_cost=0     
+    start=-1
+    end=3	
     start+=1
     initial_cost+=4
     #Mapping key to router name
@@ -164,9 +165,7 @@ for i in range(0, num_routers):
 print("\n router table for each router (with iteration no.)\n")
 #intialise thread for every node
 threads = []
-end+=1
-start+=1
-initial_cost+=4
+
 for i in range(num_routers):    
     router_thread = threading.Thread(
         target=router,
